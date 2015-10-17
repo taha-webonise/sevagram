@@ -1,0 +1,51 @@
+.wrapper.container
+  %head
+    %title SevaGram
+    %link{:href => "http://fonts.googleapis.com/css?family=Roboto:400,100,300,500", :rel => "stylesheet"}/
+  %body
+  .top-content
+    .inner-bg
+      .container
+        .row
+          .col-sm-8.col-sm-offset-2.text
+            %h1
+              %strong#form-heading SevaGram Login Form
+        .row
+          .col-sm-6.col-sm-offset-3.form-box
+            .form-top
+              .form-top-left
+                %h3 Login to our site
+                %p Enter your username and password to log on:
+              .form-top-right
+                %i.fa.fa-key
+            .form-bottom
+              = form_for(resource, class: "login-form", as: resource_name, url: session_path(resource_name)) do |f|
+                .form-group
+                  = f.label :email, class: "sr-only"
+                  = f.email_field :email, autofocus: true, class: "form-username form-control", placeholder: "Username...."
+                .form-group
+                  = f.label :password, class: "sr-only"
+                  = f.password_field :password, autocomplete: "off", class: "form-password form-control", placeholder: "Password..."
+                  - if devise_mapping.rememberable?
+                    .field
+                      = f.check_box :remember_me
+                      = f.label :remember_me
+                  .action
+                    = f.submit "Sign in!", class: "btn"
+            = render "users/shared/links"
+        .row
+          .col-sm-6.col-sm-offset-3.social-login
+            %h3 ...or login with:
+            .social-login-buttons
+              %a.btn.btn-link-1.btn-link-1-facebook{:href => "#"}
+                %i.fa.fa-facebook
+                Facebook
+              %a.btn.btn-link-1.btn-link-1-twitter{:href => "#"}
+                %i.fa.fa-twitter
+                Twitter
+              %a.btn.btn-link-1.btn-link-1-google-plus{:href => "#"}
+                %i.fa.fa-google-plus
+                Google Plus
+
+
+
