@@ -1,0 +1,4 @@
+en:
+  search_message:
+    title: "Seached By User"
+    body: "%{user} searched you"

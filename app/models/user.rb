@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   validates :address, presence: true
   validates :name, presence: true
   validates :type, presence: true
-  has_many :tags
+  has_and_belongs_to_many :tags, join_table: :users_tags
+  accepts_nested_attributes_for :users_tags
 
   after_create do
     update_attributes(

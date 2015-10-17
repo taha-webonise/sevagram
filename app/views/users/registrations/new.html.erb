@@ -23,6 +23,12 @@
     <%= f.text_field :address, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.check_box :select, collection: Tag.all %>
+    <%= f.label :tag %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
    <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>

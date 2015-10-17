@@ -1,8 +1,11 @@
 <h1> Welcome To SevaGram </h1>
   <% @users.each do |user| %>
-    <%= user.name %>
-    <%= user.address %>
-    <%= user.mobile_number %>
-    <%= user.type %>
-    <%= user.email %>
+    <%= user.name %><br />
+    <%= user.address %><br />
+    <%= user.mobile_number %><br />
+    <%= user.type %><br />
+    <%= user.email %><br />
+    <%= user.lattitude %><br />
+    <%= user.longitude %><br />
+    <br /><br /><br /><br />
   <% end %>
